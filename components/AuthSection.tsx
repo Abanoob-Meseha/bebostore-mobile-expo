@@ -23,10 +23,10 @@ const AuthSection = () => {
   return (
     <View style={styles.container}>
       <View style={styles.btnsContainer}>
-        <Button type="primary" onPress={() => router.navigate("/auth")} style={{width:"40%"}}>
+        <Button type="primary" onPress={() => router.navigate("/login")} style={{width:"40%"}}>
           Login
         </Button>
-        <Button type="secondery" onPress={() => router.navigate("/auth")} style={{width:"40%"}}>
+        <Button type="secondery" onPress={() => router.navigate("/signup")} style={{width:"40%"}}>
           Signup
         </Button>
       </View>
