@@ -5,6 +5,9 @@ import SearchBar from '@/components/SearchBar'
 import SearchFilterSection from '@/components/SearchFilterSection'
 import SectionTitle from '@/components/SectionTitle'
 import SubCategoriesSection from '@/components/SubCategoriesSection'
+import ProductCard from '@/components/ProductCard'
+import { products } from '@/assets/data/products'
+import ProductsWrapper from '@/components/ProductsWrapper'
 
 const home = () => {
   return (
@@ -20,7 +23,7 @@ const home = () => {
       <SubCategoriesSection />
       {/* Top selling Section */}
       <SectionTitle title='Top Selling' href='..'/>
-      <Text>Home</Text>
+      <ProductsWrapper />
     </ScrollView>
   )
 }
@@ -29,8 +32,7 @@ export default home
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+      padding: 16,
+      gap: 10, 
       },
 })
