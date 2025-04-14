@@ -5,8 +5,10 @@ import Button from "@/components/Button";
 import Entypo from "@expo/vector-icons/Entypo";
 import colors from "@/assets/colors/colors";
 import globalStyle from "@/assets/styles/globalStyle";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
+
 const login = () => {
+  const router = useRouter();
   return (
     <View style={{ padding: 10, alignItems: "center" }}>
       <Text style={globalStyle.title}>Login</Text>
@@ -28,7 +30,7 @@ const login = () => {
         <Link href={"/"} style={{ alignSelf: "center" }}>
           Forget Password ?
         </Link>
-        <Button type="primary" onPress={() => {}}>
+        <Button type="primary" onPress={() => {router.navigate("/home")}}>
           Login
         </Button>
       </View>
