@@ -4,7 +4,7 @@ import colors from "@/assets/colors/colors";
 import LatoText from "./LatoText";
 import AppLogo from "./AppLogo";
 
-const CartHeader = () => {
+const CartHeader = ({itemsNum , totalPrice}:{itemsNum: number , totalPrice: number}) => {
   return (
     <View style={styles.container}>
       <View>
@@ -19,11 +19,11 @@ const CartHeader = () => {
           }}
         >
           {" "}
-          0 items
+          {itemsNum} items
         </LatoText>
       </View>
       {/* Total Price Section */}
-      <TotalPriceSection price={0}/>
+      <TotalPriceSection price={totalPrice}/>
     </View>
   );
 };

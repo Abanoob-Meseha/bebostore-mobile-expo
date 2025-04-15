@@ -4,16 +4,22 @@ import CartHeader from "@/components/CartHeader";
 import CartProduct from "@/components/CartProduct";
 import { products } from "@/assets/data/products";
 import ProductsWrapper from "@/components/ProductsWrapper";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 const cart = () => {
+  const { cartProducts , totalPrice } = useSelector((store: RootState) => store.cart);
   return (
     <View style={styles.conatiner}>
       {/* Cart Header */}
-      <CartHeader />
+      <CartHeader totalPrice={totalPrice} itemsNum={cartProducts.length} />
       {/* Product Wrapper */}
-      <ScrollView style={{height: "70%" }} contentContainerStyle={{paddingVertical: 10 , paddingHorizontal: 8}}>
+      <ScrollView
+        style={{ height: "70%" }}
+        contentContainerStyle={{ paddingVertical: 10, paddingHorizontal: 8 }}
+      >
         <ProductsWrapper>
-          {products.map((product, index) => {
+          {cartProducts.map((product, index) => {
             return <CartProduct {...product} key={product.id} />;
           })}
         </ProductsWrapper>

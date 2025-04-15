@@ -1,12 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
-import { tProduct } from "@/assets/types";
+import { tCartProduct, tProduct } from "@/assets/types";
 import LatoText from "./LatoText";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import colors from "@/assets/colors/colors";
+import { useDispatch } from "react-redux";
+import { decreaseProductCount, increaseProductCount } from "@/redux/slices/cartSlice";
 
-const CartProduct = ({ imgUrl, name, price }: tProduct) => {
-  const [count, setCount] = useState(1);
+const CartProduct = ({ id,imgUrl, name, price , count }: tCartProduct) => {
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Image
@@ -30,11 +32,11 @@ const CartProduct = ({ imgUrl, name, price }: tProduct) => {
           {/* product counter */}
           <View style={{ display: "flex", flexDirection: "row", gap: 10 , alignItems: "center" }}>
             <TouchableOpacity style={styles.counterBtn}>
-              <AntDesign name="minus" size={15} color="white" />
+              <AntDesign name="minus" size={15} color="white" onPress={()=>dispatch(decreaseProductCount({productId:id}))}/>
             </TouchableOpacity>
-            <LatoText>{count}</LatoText>
+            <LatoText style={{width: 30 , textAlign: "center"}}>{count}</LatoText>
             <TouchableOpacity style={styles.counterBtn}>
-              <AntDesign name="plus" size={15} color="white" />
+              <AntDesign name="plus" size={15} color="white"  onPress={()=>dispatch(increaseProductCount({productId:id}))}/>
             </TouchableOpacity>
           </View>
         </View>

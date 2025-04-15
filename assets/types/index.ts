@@ -21,3 +21,4 @@ export type tProduct = {
   imgUrl: any;
   rating: number;
 };
+export type tCartProduct = tProduct & {count : number} ;

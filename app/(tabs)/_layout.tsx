@@ -4,8 +4,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Feather from "@expo/vector-icons/Feather";
 import colors from "@/assets/colors/colors";
 import { StyleSheet } from "react-native";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 export default function TabLayout() {
+  const { cartProducts } = useSelector((store: RootState) => store.cart);
+
   return (
     <Tabs
       screenOptions={{
@@ -13,7 +17,7 @@ export default function TabLayout() {
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
         animation: "fade",
-        headerShown: false
+        headerShown: false,
       }}
     >
       <Tabs.Screen
@@ -38,7 +42,7 @@ export default function TabLayout() {
         name="cart"
         options={{
           title: "Cart",
-          tabBarBadge: 5, // number of cart items
+          tabBarBadge: cartProducts.length, // number of cart items
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="cart-outline" color={color} />
           ),

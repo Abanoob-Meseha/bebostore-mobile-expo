@@ -1,5 +1,11 @@
-import { Stack , Slot } from "expo-router";
-import { useFonts, Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
+import { Stack, Slot } from "expo-router";
+import {
+  useFonts,
+  Lato_400Regular,
+  Lato_700Bold,
+} from "@expo-google-fonts/lato";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -10,5 +16,9 @@ export default function RootLayout() {
   if (!fontsLoaded) {
     return null; // أو <AppLoading /> لو عايز شاشة تحميل
   }
-  return <Slot />;
+  return (
+    <Provider store={store}>
+      <Slot />;
+    </Provider>
+  );
 }
