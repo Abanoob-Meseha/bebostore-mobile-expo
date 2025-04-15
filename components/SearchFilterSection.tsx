@@ -21,7 +21,7 @@ const SearchFilterSection = () => {
   return (
     <HorizontalList
       data={categories}
-      addedStyle={{height: 35}}
+      addedStyle={{height: 30}}
       renderItemCallback={({ item }) => (
         <CategoryTab
           item={item}

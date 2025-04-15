@@ -1,14 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { ReactNode } from "react";
 import { products } from "@/assets/data/products";
 import ProductCard from "./ProductCard";
 
-const ProductsWrapper = () => {
+const ProductsWrapper = ({children}:{children: ReactNode}) => {
   return (
     <View style={styles.container}>
-      {products.map((product, index) => {
-        return <ProductCard {...product} key={product.id} />;
-      })}
+      {children}
     </View>
   );
 };

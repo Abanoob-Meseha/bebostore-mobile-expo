@@ -1,13 +1,13 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import Slider from '@/components/Slider'
-import SearchBar from '@/components/SearchBar'
-import SearchFilterSection from '@/components/SearchFilterSection'
-import SectionTitle from '@/components/SectionTitle'
-import SubCategoriesSection from '@/components/SubCategoriesSection'
-import ProductCard from '@/components/ProductCard'
-import { products } from '@/assets/data/products'
-import ProductsWrapper from '@/components/ProductsWrapper'
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import Slider from "@/components/Slider";
+import SearchBar from "@/components/SearchBar";
+import SearchFilterSection from "@/components/SearchFilterSection";
+import SectionTitle from "@/components/SectionTitle";
+import SubCategoriesSection from "@/components/SubCategoriesSection";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/assets/data/products";
+import ProductsWrapper from "@/components/ProductsWrapper";
 
 const home = () => {
   return (
@@ -15,24 +15,28 @@ const home = () => {
       {/* search Section */}
       <SearchBar />
       {/* search Categories Filter Section */}
-      <SearchFilterSection/>
+      <SearchFilterSection />
       {/* Banner Slider */}
       <Slider />
       {/* SubCategories Section */}
-      <SectionTitle title='Categories' href='..'/>
+      <SectionTitle title="Categories" href=".." />
       <SubCategoriesSection />
       {/* Top selling Section */}
-      <SectionTitle title='Top Selling' href='..'/>
-      <ProductsWrapper />
+      <SectionTitle title="Top Selling" href=".." />
+      <ProductsWrapper>
+        {products.map((product, index) => {
+          return <ProductCard {...product} key={product.id} />;
+        })}
+      </ProductsWrapper>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default home
+export default home;
 
 const styles = StyleSheet.create({
-    container: {
-      padding: 16,
-      gap: 10, 
-      },
-})
+  container: {
+    padding: 16,
+    gap: 10,
+  },
+});
