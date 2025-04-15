@@ -4,6 +4,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import colors from "@/assets/colors/colors";
 const WomanImage = require("../assets/images/woman-shopping.png");
 import { useRouter } from 'expo-router';
+import LatoText from "@/components/LatoText";
 
 export default function Index() {
   const router = useRouter()
@@ -21,18 +22,18 @@ export default function Index() {
         }}
         resizeMode="cover"
       >
-        <Text
+        <LatoText
           style={{
             marginBottom: 50,
             color: colors.primary,
             fontSize: 50,
             fontWeight: "bold",
-            fontFamily: "Inter",
+            fontFamily: 'Lato_700Bold',
             boxShadow: "10px",
           }}
         >
-          BEBO<Text style={{ color: "white" }}>STORE</Text>
-        </Text>
+          BEBO<LatoText style={{ color: "white" }}>STORE</LatoText>
+        </LatoText>
           <Button
             type="primary"
             icon={<MaterialIcons name="start" color={"white"} size={20} />}

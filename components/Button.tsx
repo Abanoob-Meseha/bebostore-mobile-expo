@@ -1,6 +1,7 @@
 import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native'
 import React, { ReactNode } from 'react'
 import colors from '@/assets/colors/colors'
+import LatoText from './LatoText'
 
 interface buttonProps {
     children : ReactNode
@@ -12,7 +13,7 @@ interface buttonProps {
 const Button = ({children , type , icon , onPress , style} : buttonProps) => {
   return (
     <Pressable style={[styles.btnContainer , type == "primary"? styles.primary : styles.secondary , style]} onPress={onPress}>
-      <Text style={[styles.text , type == "primary" ? styles.primaryText : styles.secondaryText]}>{children}</Text>
+      <LatoText style={[styles.text , type == "primary" ? styles.primaryText : styles.secondaryText]}>{children}</LatoText>
       {icon}
     </Pressable>
   )

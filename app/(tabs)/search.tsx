@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import LatoText from '@/components/LatoText'
 
 const search = () => {
   return (
     <View>
-      <Text>search</Text>
+      <LatoText>search</LatoText>
     </View>
   )
 }

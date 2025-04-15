@@ -6,15 +6,16 @@ import Entypo from "@expo/vector-icons/Entypo";
 import colors from "@/assets/colors/colors";
 import globalStyle from "@/assets/styles/globalStyle";
 import { Link, useRouter } from "expo-router";
+import LatoText from "@/components/LatoText";
 
 const login = () => {
   const router = useRouter();
   return (
     <View style={{ padding: 10, alignItems: "center" }}>
-      <Text style={globalStyle.title}>Login</Text>
-      <Text style={globalStyle.description}>
+      <LatoText style={globalStyle.title}>Login</LatoText>
+      <LatoText style={globalStyle.description}>
         Welcome back you have been missed!
-      </Text>
+      </LatoText>
       {/* Login Form */}
       <View style={globalStyle.form}>
         <Input

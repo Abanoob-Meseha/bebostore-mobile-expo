@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link, RelativePathString } from "expo-router";
 import colors from "@/assets/colors/colors";
+import LatoText from "./LatoText";
 
 const SectionTitle = ({
   title,
@@ -12,7 +13,7 @@ const SectionTitle = ({
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <LatoText style={styles.title}>{title}</LatoText>
       <Link href={href} style={styles.link}>See All</Link>
     </View>
   );

@@ -4,6 +4,7 @@ import Button from "./Button";
 import { useRouter } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import colors from "@/assets/colors/colors";
+import LatoText from "./LatoText";
 const thirdPartyAuth: { name: string; onPress: () => void }[] = [
   {
     name: "Google",
@@ -30,10 +31,10 @@ const AuthSection = () => {
           Signup
         </Button>
       </View>
-      <Text style={styles.orText}>
+      <LatoText style={styles.orText}>
         {" "}
         ------------------------------ OR ------------------------------{" "}
-      </Text>
+      </LatoText>
       <View style={styles.thirdPartyContainer}>
         {thirdPartyAuth.map((provider, index) => {
             const providerName = provider.name.toLowerCase();

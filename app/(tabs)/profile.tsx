@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import LatoText from '@/components/LatoText'
 
 const profile = () => {
   return (
     <View>
-      <Text>profile</Text>
+      <LatoText>profile</LatoText>
     </View>
   )
 }

@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import LatoText from '@/components/LatoText'
 
 const cart = () => {
   return (
     <View>
-      <Text>cart</Text>
+      <LatoText>cart</LatoText>
     </View>
   )
 }

@@ -4,8 +4,8 @@ import colors from "@/assets/colors/colors";
 import { tProduct } from "@/assets/types";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Button from "./Button";
-import Ionicons from "@expo/vector-icons/Ionicons";
+
+import LatoText from "./LatoText";
 
 const ProductCard = ({
   id,
@@ -20,7 +20,7 @@ const ProductCard = ({
     <View style={styles.container}>
       {/* offer & favorite absolute Section */}
       <View style={styles.header}>
-        <Text style={styles.offerTxt}> -{offerPercentage}%</Text>
+        <LatoText style={styles.offerTxt}> -{offerPercentage}%</LatoText>
         <FontAwesome
           name="cart-plus"
           size={24}
@@ -29,24 +29,24 @@ const ProductCard = ({
         />
       </View>
       <Image
-        resizeMode="cover"
-        source={require("@/assets/images/products/airbuds.png")}
+        resizeMode="contain"
+        source={imgUrl}
         alt={name}
         style={styles.img}
       />
       {/* name and price Section */}
       <View style={styles.content}>
-        <Text style={styles.title}>{name}</Text>
+        <LatoText style={styles.title}>{name}</LatoText>
         <View style={styles.rating_price}>
             {/* rating */}
           <View style={{ display: "flex",flexDirection: "row" ,alignItems: "center" , gap: 2 }}>
             <AntDesign name="star" size={24} color="gold" />
-            <Text>{rating}</Text>
+            <LatoText>{rating}</LatoText>
           </View>
           {/* prices */}
           <View>
-            <Text style={{color: colors.primary , fontSize: 16}}>{price} EGP</Text>
-            <Text style={{color: "red" , textDecorationLine: "line-through"}}>{priceBeforeOffer}</Text>
+            <LatoText style={{color: colors.primary , fontSize: 16}}>{price} EGP</LatoText>
+            <LatoText style={{color: "red" , textDecorationLine: "line-through"}}>{priceBeforeOffer}</LatoText>
           </View>
         </View>
       </View>
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: 10,
+    marginTop: 5
   },
   title: {
     fontSize: 15,

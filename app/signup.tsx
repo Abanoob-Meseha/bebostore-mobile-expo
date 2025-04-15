@@ -5,14 +5,15 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Entypo from "@expo/vector-icons/Entypo";
 import colors from "@/assets/colors/colors";
+import LatoText from "@/components/LatoText";
 
 const signup = () => {
   return (
     <View style={{ padding: 10, alignItems: "center" }}>
-      <Text style={globalStyle.title}>Create Account</Text>
-      <Text style={globalStyle.description}>
+      <LatoText style={globalStyle.title}>Create Account</LatoText>
+      <LatoText style={globalStyle.description}>
         Create an account so you can explore all products and offers
-      </Text>
+      </LatoText>
       {/* Login Form */}
       <View style={globalStyle.form}>
         <Input mode="text" placeholder="First Name" />

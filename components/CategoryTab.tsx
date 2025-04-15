@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { tCategory } from "@/assets/types";
 import colors from "@/assets/colors/colors";
+import LatoText from "./LatoText";
 
 type tCategoryTabProps = {
   onPress: () => void;
@@ -18,9 +19,9 @@ const CategoryTab = ({ item, active, onPress }: tCategoryTabProps) => {
       }
       onPress={onPress}
     >
-      <Text style={active === item ? styles.activeTxt : styles.txt}>
+      <LatoText style={active === item ? styles.activeTxt : styles.txt}>
         {item.name}
-      </Text>
+      </LatoText>
     </TouchableOpacity>
   );
 };

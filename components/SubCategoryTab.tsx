@@ -2,12 +2,13 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { tSubCategory } from "@/assets/types";
 import colors from "@/assets/colors/colors";
+import LatoText from "./LatoText";
 
 const SubCategoryTab = ({ id ,title , imgUrl} : tSubCategory ) => {
   return (
     <View style={styles.container}>
-      <Image source={require("@/assets/images/logo.png")} style={styles.img} resizeMode="stretch"/>
-      <Text>{title}</Text>
+      <Image source={imgUrl} style={styles.img} resizeMode="stretch"/>
+      <LatoText>{title}</LatoText>
     </View>
   );
 };
